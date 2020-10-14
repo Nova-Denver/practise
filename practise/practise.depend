@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1600182173 source:d:\programming\practise\practise\minin.c
+	<stdlib.h>
+	<stdio.h>
+
+1600182188 source:d:\programming\practise\practise\seerching.c
+	<stdio.h>
+	<stdlib.h>
+
+1601575549 source:d:\programming\practise\practise\check1.cpp
+	<iostream>
+
