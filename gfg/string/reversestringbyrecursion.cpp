@@ -3,16 +3,17 @@
 using namespace std;
 void reverse(string str)
 {
-        if(str.length()==0) {
+        if (str.length() == 0)
+        {
                 return;
         }
         reverse(str.substr(1));
-        cout<<str[0];
+        cout << str[0];
 }
-int main(){
+int main()
+{
         string str;
-        cout<<"Enter the string\t";
-        getline(cin,str);
+        cout << "Enter the string\t";
+        getline(cin, str);
         reverse(str);
-
 }

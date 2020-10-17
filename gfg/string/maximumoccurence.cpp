@@ -1,5 +1,6 @@
 #include <iostream>
-#include <limits>
+
+#include <climits>
 using namespace std;
 int main(){
         string str,temp;
