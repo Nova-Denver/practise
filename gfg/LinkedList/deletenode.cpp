@@ -3,47 +3,52 @@
 using namespace std;
 struct node{
     int data;
-    node *next;
-    node()
-    {
-        next=NULL;
+    struct node *next;
+}*head=NULL;
+void create(int a[],int n){
+    node *last;
+    head=new node();
+    head->data=a[0];
+    head->next=NULL;
+    last=head;
+    for(int i=1;i<n;i++){
+         node *t=new node();
+         t->data=a[i];
+         t->next=NULL;
+         last->next=t;
+         last=t;
+
     }
-};
-node *deletenode(node *head){
+}
+int deletenode(node *head) { 
     if(head==NULL){
         return NULL;
     }
     else{
         node *temp = head->next;
-        free(head);
-        return temp;
+        head->data=temp->data;
+        head->next=temp->next;
+       
+        temp->next=head->next;
+        free(temp);
     }
-    //this is program
+
 
 }
 void display(node *head){
-    node* temp = head;
-    while(temp!=NULL){
-        cout<<temp->data<<" ";
-        temp=temp->next;  
+    while(head!=NULL){
+        cout<<head->data<<"  ";
+        head=head->next;
     }
 }
 int main(){
-
-
-      struct node *head,*last;//in c we cant use new pointer without declaring it 
-     head = new node();
-    head->data=1;
-    head->next=NULL;
-    last = head;
-    node *first = new node();
-    first->data=2;
-    last->next=first;
-    last=first;
-    node *second = new node();
-    second->data=3;
-    last->next=second;
-    last=second;
+    int a[]={1,2,3,4,5,6,7,8,9};
+    create(a,9);
+    cout<<"before deletion ";
+  display(head);
     deletenode(head);
-    display(head);
+    cout<<"After deletion ";
+     display(head);
 }
+
+//Fast solution is to copy the data from the next node to the node to be deleted and delete the next node.

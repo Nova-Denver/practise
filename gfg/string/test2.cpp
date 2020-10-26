@@ -4,41 +4,31 @@ using namespace std;
 struct node {
         int data;
         node *next;
-        node(int x){
-                data = x;
-                next = NULL;
-        }
-};
-node * create(int a[],int n){
-        node *last,*t;
-        node *head = new node(a[0]);
-        // head->data=a[0];
-        // head->next=NULL;
-        last=head;
-        for(int i=1; i<n; i++) {
-                t=new node(a[i]);
-
-                last->next=t;
-                last=t;
-        }
-        return head;
+}*head=NULL;
+void create(){
+        cout<<"Enter the node \n";
+        cin>>head->data;
+        head->next=NULL;
+        node *next_node;
+        next_node=head;
+        next_node->next=NULL;
+        head->next=next_node;
 }
-void display(node * head){
+node *display(node *head)
+{
         while(head!=NULL) {
-                cout<<head->data<<"   ";
+                cout<<head->data<<"\t";
                 head=head->next;
         }
-}
-void rdisplay(node *head){
-        if(head==NULL) {
-                return;
-        }
-        cout<<head->data<<" ";
-        rdisplay(head->next);
+
 }
 int main(){
-        // struct node *p;
-        int a[100]={1,2,3,4,5,6,7,8,9,70};
-        node * head = create(a,10);
+        int n;
+        cout<<"Enter the number of nodes you want to insert ";
+        cin>>n;
+        for(int i=0; i<n; i++) {
+                create();
+        }
         display(head);
+
 }
